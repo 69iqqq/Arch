@@ -1,0 +1,93 @@
+// Config //
+configuration {
+    modi:                        "drun";
+    show-icons:                  true;
+    drun-display-format:         "{name}";
+    font:                        "JetBrainsMono Nerd Font 10";  // Increased font size for better readability
+}
+
+@theme "~/scripts/theme.rasi"
+
+// Main //
+window {
+    enabled:                     true;
+    fullscreen:                  false;
+    width:                       81%;  // Optimized width for better centering
+    height:                      60%;
+    location:                    center;  // Centered window for better balance
+    x-offset:                    0%;  // Removed offset for absolute centering
+    y-offset:                    0%;  // Center vertically
+    transparency:                "real";
+    cursor:                      "default";
+    spacing:                     10px;  // Added spacing for a bit of margin between window content
+    padding:                     10px;  // Added padding for more spacious look
+    border:                      2px;  // Soft border for subtle delineation
+    border-radius:               15px;  // Increased border radius for softer corners
+    border-color:                rgba(255, 255, 255, 0.2);  // Subtle border color
+    background-color:            rgba(0, 0, 0, 0.6);  // Slight background transparency for contrast
+}
+
+mainbox {
+    enabled:                     true;
+    children:                    [ "listview" ];
+    background-color:            @main-bg;
+    padding:                     0px;  // Increased padding for a cleaner look
+}
+
+// Lists //
+// Lists //
+listview {
+    enabled:                     true;
+    columns:                     5;  // Changed to 1 column for vertical scrolling
+    lines:                       10;  // Fixed number of rows for display
+    spacing:                     20px;  // Increased spacing between items
+    padding:                     10px 20px;  // Padding for balance and better spacing
+    cycle:                       false;  // Disabled cycling for natural scrolling
+    dynamic:                     false;  // Disabled dynamic layout for stability
+    scrollbar:                   false;  // Enabled scrollbar for vertical scrolling
+    layout:                      vertical;  // Vertical layout for scrolling
+    reverse:                     false;  // Non-reverse for a more intuitive order
+    fixed-height:                true;
+    fixed-columns:               true;
+    cursor:                      "default";
+    background-color:            transparent;
+    text-color:                  @main-fg;
+}
+
+// Elements //
+element {
+    enabled:                     true;
+    orientation:                 vertical;
+    spacing:                     10px;  // Added spacing between elements for a cleaner look
+    padding:                     10px;  // Softened padding for improved readability
+    border-radius:               5px;  // Soft border radius for a less harsh effect
+    cursor:                      pointer;
+    background-color:            transparent;
+    text-color:                  @main-fg;
+}
+
+element selected.normal {
+    background-color:            @select-bg;
+    text-color:                  @select-fg;
+}
+
+element-icon {
+    size:                        20%;  // Slightly increased icon size for better visibility
+    spacing:                     10px;  // Added spacing between icons for clarity
+    padding:                     5px;  // Added padding for a little breathing room
+    cursor:                      inherit;
+    border-radius:               0px;  // Non-rounded icons for a cleaner look
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+
+element-text {
+    enabled:                     false;
+    vertical-align:              0.5;
+    horizontal-align:            0;
+    spacing:                     5px;  // Added spacing for clarity between text and icon
+    padding:                     5px;  // Soft padding around text for a better layout
+    cursor:                      inherit;
+    background-color:            transparent;
+    text-color:                  inherit;
+}
